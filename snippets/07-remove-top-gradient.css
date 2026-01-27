@@ -1,0 +1,45 @@
+/* 07 - Remove Top Gradient
+ *
+ * Remove header background/gradient elements for a flatter header look.
+ *
+ * Usage:
+ * - Save this file as `snippets/07-remove-top-gradient.css` and copy its contents
+ *   into your Spicetify custom stylesheet, or include it as a snippet in your workflow.
+ * - After applying, run `spicetify apply` to see changes.
+ *
+ * Notes:
+ * - This snippet uses `display: none !important;` to reliably hide overlay/background
+ *   elements. If you prefer a subtle replacement (instead of removal), see the
+ *   commented alternatives below.
+ */
+
+/* Hide the main header/background elements that create top gradients */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-home-homeHeader,
+.playlist-playlist-actionBarBackground-background {
+  display: none !important;
+}
+
+/* Optional: replace the gradient with a subtle, flat background instead of hiding it */
+/*
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-home-homeHeader,
+.playlist-playlist-actionBarBackground-background {
+  background: rgba(0, 0, 0, 0.18) !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+*/
+
+/* Optional: ensure header text/icons remain legible after gradient removal */
+/*
+.main-entityHeader,
+.main-home-homeHeader,
+.playlist-playlist-actionBar {
+  color: #FFFFFF !important;
+}
+*/
+
+/* End of snippet */

@@ -1,0 +1,36 @@
+/* 01 - Better Lyrics Style
+ *
+ * Emphasize the active lyric line and de-emphasize others.
+ * - Active line: unblurred, larger, more padding.
+ * - Non-active lines: slightly blurred and slightly smaller.
+ * - Unsynced lines: readable (no blur), smaller padding.
+ *
+ * Usage: copy this file (or its contents) into your Spicetify custom CSS
+ * or include it as a snippet in your workflow.
+ */
+
+.lyrics-lyrics-contentContainer .lyrics-lyricsContent-lyric {
+  filter: blur(1.5px);
+  padding: 15px;
+  font-size: 110%;
+  transition: filter 160ms ease, padding 160ms ease, font-size 160ms ease;
+}
+
+.lyrics-lyrics-contentContainer .lyrics-lyricsContent-lyric.lyrics-lyricsContent-highlight {
+  /* subtle highlight color for nearby lines */
+  color: #FFFFFF66;
+}
+
+.lyrics-lyrics-contentContainer .lyrics-lyricsContent-lyric.lyrics-lyricsContent-active {
+  filter: none;
+  padding: 20px;
+  font-size: 130%;
+  color: #FFFFFF;
+}
+
+.lyrics-lyrics-contentContainer .lyrics-lyricsContent-lyric.lyrics-lyricsContent-unsynced {
+  filter: none;
+  padding: 10px;
+  font-size: 100%;
+  color: #FFFFFF;
+}

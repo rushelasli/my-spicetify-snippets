@@ -1,0 +1,78 @@
+/* 06 - Smaller Right Sidebar Cover Art
+ *
+ * Shrinks the right-side (Now Playing) cover art and tightens the layout.
+ * - Change `--right-sidebar-cover-art-size` to adjust the cover size.
+ * - Usage: paste this into your Spicetify custom CSS or save it as
+ *   `snippets/06-smaller-right-cover.css` and include it as needed.
+ */
+
+:root {
+  /* default right sidebar cover art size (can be overridden) */
+  --right-sidebar-cover-art-size: 85px;
+}
+
+/* Cover art sizing and container adjustments */
+.main-nowPlayingView-coverArt {
+  width: var(--right-sidebar-cover-art-size);
+  height: var(--right-sidebar-cover-art-size);
+  min-width: var(--right-sidebar-cover-art-size);
+  display: block;
+  object-fit: cover;
+}
+
+/* Ensure container doesn't force a large min-height and aligns nicely */
+.main-nowPlayingView-coverArtContainer {
+  min-height: unset !important;
+  width: var(--right-sidebar-cover-art-size) !important;
+  height: var(--right-sidebar-cover-art-size) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Layout tweaks: lay out now-playing info horizontally and center vertically */
+.main-nowPlayingView-nowPlayingGrid {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Make sure the track info area takes remaining space and trims overflow gracefully */
+.main-nowPlayingView-contextItemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Track title and artist sizing for a compact look */
+.main-nowPlayingView-contextItemInfo .main-trackInfo-name {
+  font-size: 1.25rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-nowPlayingView-contextItemInfo .main-trackInfo-artists {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Remove any decorative pseudo elements that conflict with the compact layout */
+.main-nowPlayingView-contextItemInfo:before {
+  display: none !important;
+}
+
+/* Optional: slightly reduce spacing on very small screens */
+@media (max-width: 900px) {
+  :root {
+    --right-sidebar-cover-art-size: 64px;
+  }
+  .main-nowPlayingView-contextItemInfo .main-trackInfo-name {
+    font-size: 1.05rem;
+  }
+  .main-nowPlayingView-contextItemInfo .main-trackInfo-artists {
+    font-size: 0.8rem;
+  }
+}

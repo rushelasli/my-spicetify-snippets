@@ -1,0 +1,28 @@
+/* 08 - Hide Recently Played Sections
+ *
+ * Hides the "Recently played" and home shortcuts sections from the home view
+ * to reduce visual clutter.
+ *
+ * Usage:
+ * - Paste this snippet into your Spicetify custom CSS (or save as
+ *   `snippets/08-hide-recently-played.css`) and run `spicetify apply`.
+ * - To re-enable, remove or comment out the rules and re-apply.
+ *
+ * Notes:
+ * - If Spotify changes the aria-label or class names, inspect the DOM and
+ *   update the selectors accordingly.
+ */
+
+.view-homeShortcutsGrid-shortcuts,
+section[aria-label='Recently played'] {
+  display: none;
+}
+
+/* Optional: hide other similarly named sections (case-sensitive); uncomment if needed
+section[aria-label='Recently Played'],
+section[aria-label='Recent played'] {
+  display: none;
+}
+*/
+
+/* End of snippet */

@@ -1,0 +1,51 @@
+/* 03 - Modern ScrollBar
+ *
+ * Thin, rounded overlay-style scrollbar handle optimized for readability and subtlety.
+ * - Default: thin and very rounded
+ * - Hover / focus: expands slightly for easier grabbing
+ *
+ * Usage: paste this snippet into your Spicetify custom CSS or save it as
+ * `snippets/03-modern-scrollbar.css` and include/use it as needed.
+ */
+
+.os-scrollbar-handle {
+  width: 0.25rem !important;
+  border-radius: 10rem !important;
+  transition: width 300ms ease-in-out, background-color 160ms ease;
+  background-color: rgba(255, 255, 255, 0.18) !important; /* subtle default handle color */
+  box-shadow: none !important;
+}
+
+/* Make the handle slightly larger and more visible on hover/focus for usability */
+.os-scrollbar-handle:focus,
+.os-scrollbar-handle:focus-within,
+.os-scrollbar-handle:hover {
+  width: 0.35rem !important;
+  background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+/* Keep the track unobtrusive */
+.os-scrollbar-track {
+  background: transparent !important;
+}
+
+/* Optional: fallback for other scrollbar implementations (e.g., WebKit) */
+::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  transition: background-color 120ms linear;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Optional: show scrollbars only on hover (uncomment if desired)
+.os-scrollbar-handle { visibility: hidden; opacity: 0; transition: opacity 160ms ease; }
+.container:hover .os-scrollbar-handle { visibility: visible; opacity: 1; }
+*/

@@ -1,0 +1,31 @@
+/* 10 - Remove Playlist Album Cover
+ *
+ * Hides the large playlist/album image used in some entity headers to create a cleaner,
+ * more compact header. Copy this snippet into your Spicetify custom CSS (or save
+ * it as `snippets/10-remove-playlist-cover.css`) and run `spicetify apply`.
+ *
+ * Notes:
+ * - Spotify's DOM and class names may change with updates. If this stops working,
+ *   inspect the header element in DevTools and update the selector accordingly.
+ * - To re-enable the cover, remove or comment out the rules below and re-apply.
+ */
+
+/* Hide the new-style entity header image container */
+.main-entityHeader-imageContainer.main-entityHeader-imageContainerNew {
+  display: none;
+}
+
+/* Optional: if you find spacing looks off after hiding the cover, you can
+   tweak header layout (example - uncomment and adjust as needed):
+
+   .main-entityHeader {
+     padding-left: 0 !important;
+   }
+
+   Or, to hide legacy variants as well (uncomment when needed):
+
+   .main-entityHeader-imageContainer,
+   .main-entityHeader-imageContainerNew {
+     display: none !important;
+   }
+*/

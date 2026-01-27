@@ -1,0 +1,65 @@
+/* 05 - Oneko
+ *
+ * Adds a small animated 'oneko' sprite to the playback progress bar.
+ *
+ * Usage:
+ * - Save this file as `snippets/05-oneko.css` or copy the contents into your
+ *   Spicetify custom stylesheet and run `spicetify apply`.
+ *
+ * Notes:
+ * - The snippet uses an externally hosted GIF by default. To use a local copy,
+ *   download the GIF (e.g. `oneko.gif`) and replace the `background-image` URL.
+ * - If the sprite is misaligned, tweak the variables below (size / offsets).
+ * - Respect accessibility: animation will be disabled if the user prefers reduced motion.
+ */
+
+:root {
+  --oneko-size: 32px;
+  --oneko-right-offset: 10px;
+  --oneko-bottom-offset: 7px;
+  --oneko-zindex: 20;
+}
+
+/* Make sure the progress bar is positioned so the pseudo-element sits correctly */
+.player-controls .playback-progressbar {
+  position: relative;
+}
+
+/* The oneko sprite */
+.player-controls .playback-progressbar::before {
+  content: '';
+  position: absolute;
+  width: var(--oneko-size);
+  height: var(--oneko-size);
+  bottom: calc(100% - var(--oneko-bottom-offset));
+  right: var(--oneko-right-offset);
+  pointer-events: none;
+  image-rendering: pixelated;
+  background-image: url('https://raw.githubusercontent.com/adryd325/oneko.js/14bab15a755d0e35cd4ae19c931d96d306f99f42/oneko.gif');
+  background-repeat: no-repeat;
+  /* Starting position; the keyframes will toggle between frames */
+  background-position: -64px 0;
+  animation: oneko 1s infinite;
+  z-index: var(--oneko-zindex);
+  display: block;
+}
+
+/* Give people the option to disable animated content via OS/browser preferences */
+@media (prefers-reduced-motion: reduce) {
+  .player-controls .playback-progressbar::before {
+    animation: none;
+    opacity: 0.95;
+  }
+}
+
+/* Sprite keyframes — switch background position between frames */
+@keyframes oneko {
+  0%,
+  50% {
+    background-position: -64px 0;
+  }
+  50.0001%,
+  100% {
+    background-position: -64px -32px;
+  }
+}

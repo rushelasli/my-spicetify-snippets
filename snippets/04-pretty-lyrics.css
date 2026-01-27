@@ -1,0 +1,59 @@
+/* 04 - Pretty Lyrics
+ *
+ * Hides the lyrics background and applies subtle fading to non-active lines.
+ * - Hides the lyrics background for a cleaner look.
+ * - Non-active lines are faded (semi-transparent white).
+ * - Hovering a faded line restores full color for readability.
+ * - Provider/description lines use a slightly different tint.
+ *
+ * Usage: paste this file (or its contents) into your Spicetify custom CSS,
+ * or save it as `snippets/04-pretty-lyrics.css` and include/paste it into
+ * your workflow as desired.
+ */
+
+/* Remove the lyrics background to keep the UI clean */
+.lyrics-lyrics-background {
+  display: none;
+}
+
+/* Fade all lines except active, highlight, provider, description, or unsynced */
+.lyrics-lyrics-contentWrapper > *:not(
+  .lyrics-lyricsContent-active,
+  .lyrics-lyricsContent-highlight,
+  .lyrics-lyricsContent-provider,
+  .lyrics-lyricsContent-description,
+  .lyrics-lyricsContent-unsynced
+) {
+  color: #FFFFFF4D !important; /* semi-transparent white */
+  transition: color 160ms ease;
+}
+
+/* Reveal full color on hover */
+.lyrics-lyrics-contentWrapper > *:not(
+  .lyrics-lyricsContent-active,
+  .lyrics-lyricsContent-highlight,
+  .lyrics-lyricsContent-provider,
+  .lyrics-lyricsContent-description,
+  .lyrics-lyricsContent-unsynced
+):hover {
+  color: #FFFFFF !important;
+}
+
+/* Slightly different tint for nearby/highlighted lines */
+.lyrics-lyricsContent-highlight {
+  color: #FFFFFF66 !important;
+}
+
+/* Unsynced lines: make them fully readable */
+.lyrics-lyricsContent-unsynced {
+  color: #FFFFFF !important;
+}
+.lyrics-lyricsContent-unsynced:hover {
+  color: #FFFFFF !important;
+}
+
+/* Provider / description lines: subtle but readable */
+.lyrics-lyricsContent-provider,
+.lyrics-lyricsContent-description {
+  color: #FFFFFFB6 !important;
+}

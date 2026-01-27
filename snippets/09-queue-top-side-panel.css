@@ -1,0 +1,40 @@
+/* 09 - Queue Top Side Panel
+ *
+ * Move the Queue section to the top of the right-side (Now Playing) panel
+ * by reordering other sections via flexbox `order`.
+ *
+ * Usage:
+ * - Save this file as `snippets/09-queue-top-side-panel.css` and paste its
+ *   contents into your Spicetify custom CSS (or include it in your theme),
+ *   then run `spicetify apply`.
+ *
+ * Notes:
+ * - If Spotify changes class names, inspect the DOM and update selectors accordingly.
+ * - On narrow screens the ordering is reset so the layout remains natural.
+ */
+
+/* Primary approach: push all non-queue sections after the queue */
+.main-nowPlayingView-section:not(.main-nowPlayingView-queue) {
+  order: 99;
+}
+
+/* Optional alternative (uncomment if the above doesn't work in your Spotify version):
+   Explicitly put the queue first by giving it a negative order value.
+.main-nowPlayingView-queue {
+  order: -1;
+}
+*/
+
+/* Reset the ordering on narrow screens to avoid layout issues */
+@media (max-width: 900px) {
+  .main-nowPlayingView-section:not(.main-nowPlayingView-queue),
+  .main-nowPlayingView-queue {
+    order: initial !important;
+  }
+}
+
+/* Optional: if you want the queue to be visually emphasized, you can tweak spacing:
+.main-nowPlayingView-queue {
+  margin-bottom: 10px;
+}
+*/

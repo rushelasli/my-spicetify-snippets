@@ -1,0 +1,24 @@
+/* 02 - Hide Sidebar ScrollBar
+ *
+ * Hides the scrollbar handles and tracks inside the left sidebar and the root nav bar
+ * to reduce visual noise while preserving scroll functionality.
+ *
+ * Usage: paste this file (or its contents) into your Spicetify custom CSS, or include it
+ * as a snippet in your workflow.
+ */
+
+#Desktop_LeftSidebar_Id .os-scrollbar-handle,
+.Root__nav-bar .os-scrollbar-handle,
+#Desktop_LeftSidebar_Id .os-scrollbar-track,
+.Root__nav-bar .os-scrollbar-track {
+  visibility: hidden;
+}
+
+/* Optional: show scrollbars when hovering the sidebar (uncomment to enable)
+#Desktop_LeftSidebar_Id:hover .os-scrollbar-handle,
+#Desktop_LeftSidebar_Id:hover .os-scrollbar-track,
+.Root__nav-bar:hover .os-scrollbar-handle,
+.Root__nav-bar:hover .os-scrollbar-track {
+  visibility: visible;
+}
+*/
