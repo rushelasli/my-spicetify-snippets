@@ -1,23 +1,22 @@
 # my-spicetify-snippets
 
-Collection of Spicetify CSS snippets. Tested with the `Blacksuan19` theme.
+Collection of Spicetify CSS snippets to customize your Spotify desktop client. These snippets are tested with the `Blacksuan19` theme.
 
 ## Contents
 
 - `index.css` — combined stylesheet with all tweaks.
 - `snippets/` — per-tweak files (one file per tweak).
-- `screenshot.png` — example preview.
+- `preview/` — contains before and after screenshots for visual comparison.
 
 ## Usage
 
-1. Copy `index.css` into your theme's custom CSS (or copy desired file(s) from `snippets/` into your custom CSS).
-2. Apply changes:
+1. Open the [Spicetify Marketplace](https://spicetify.app/).
+2. Go to the **Themes** tab and download the default `Blacksuan19` theme.
+3. Navigate to the **Snippets** tab.
+4. Click **Add CSS** at the bottom-right of the section.
+5. Copy the contents of `index.css` from this repository and paste it into the editor.
 
-```/dev/null/usage.sh#L1-2
-spicetify apply
-```
-
-To disable a tweak, remove or comment its block from the custom CSS and re-run the apply command.
+To disable a tweak, remove or comment out its block from the custom CSS and re-run the apply command.
 
 ## Snippets
 
@@ -34,9 +33,34 @@ To disable a tweak, remove or comment its block from the custom CSS and re-run t
 
 ## Preview
 
-![Preview screenshot](preview.png)
+Below are the visual previews of the tweaks applied. Each set of images shows the **before** and **after** states for different sections of the Spotify client.
 
-Preview: playlist view with several tweaks applied (smaller right-side cover art, adjusted lyrics styling, removed top gradient, queue side panel, etc.).
+### Home View
+**Before:**
+![Home Before](preview/before/home.png)
+
+**After:**
+![Home After](preview/after/home.png)
+
+---
+
+### Playlist View
+**Before:**
+![Playlist Before](preview/before/playlist.png)
+
+**After:**
+![Playlist After](preview/after/playlist.png)
+
+---
+
+### Lyrics View
+**Before:**
+![Lyrics Before](preview/before/lyric.png)
+
+**After:**
+![Lyrics After](preview/after/lyric.png)
+
+These previews demonstrate the effects of various tweaks, such as smaller right-side cover art, adjusted lyrics styling, removed top gradient, and repositioned queue side panel.
 
 ## Notes
 
