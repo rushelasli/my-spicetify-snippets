@@ -61,8 +61,3 @@ Below are the visual previews of the tweaks applied. Each set of images shows th
 ![Lyrics After](preview/after/lyric.png)
 
 These previews demonstrate the effects of various tweaks, such as smaller right-side cover art, adjusted lyrics styling, removed top gradient, and repositioned queue side panel.
-
-## Notes
-
-- Theme: built and tested for `Blacksuan19`. Other themes may require minor selector or spacing adjustments.
-- Maintenance: Spotify's DOM and class names can change; update selectors if a snippet stops working.
